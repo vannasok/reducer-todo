@@ -29,7 +29,7 @@ export const Reducer = (state, action) => {
       ];
 
     case 'Toggle':
-      let Clicktoggle = state.map(item => {
+      let toggle = state.map(item => {
         if (item.id === action.payload) {
           return {
             ...item,
@@ -39,7 +39,7 @@ export const Reducer = (state, action) => {
           return item;
         }
       });
-      return Clicktoggle;
+      return toggle;
 
     case 'RemoveTodo':
       let Remove = state.filter(item => {

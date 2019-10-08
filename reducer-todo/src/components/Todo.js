@@ -17,6 +17,14 @@ const Todo = props => {
         {state.map(state => {
           return (
             <div
+              style={
+                state.completed
+                  ? {
+                      textDecoration: 'line-through',
+                      textDecorationColor: 'red'
+                    }
+                  : null
+              }
               className={state.completed ? 'completed' : ''}
               onClick={() => {
                 dispatch({ type: 'Toggle', payload: state.id });
@@ -27,7 +35,6 @@ const Todo = props => {
         })}
 
         <input
-          className='Input'
           type='text'
           name='newTitle'
           value={newTitleText}
